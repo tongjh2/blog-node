@@ -12,6 +12,17 @@ const timeAxis = require('./timeAxis');
 const project = require('./project');
 
 module.exports = app => {
+	//设置允许跨域访问该服务.
+	app.use((req, res, next) => {
+		res.header('Access-Control-Allow-Origin', '*')
+		res.header('Access-Control-Allow-Headers', 'Authorization,X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method' )
+		res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PATCH, PUT, DELETE')
+		res.header('Allow', 'GET, POST, PATCH, OPTIONS, PUT, DELETE')
+		next();
+	});
+
+
+
 	app.post('/login', user.login);
 	app.post('/logout', user.logout);
 	app.post('/loginAdmin', user.loginAdmin);
