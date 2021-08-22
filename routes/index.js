@@ -14,7 +14,7 @@ var cors = require('cors')
 
 module.exports = app => {
 	//设置允许跨域访问该服务.
-	app.options('*', function (req,res) { res.sendStatus(200); });
+	app.options('*', cors())
 	
 	app.use(cors());
 
