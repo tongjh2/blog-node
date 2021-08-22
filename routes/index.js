@@ -10,10 +10,14 @@ const link = require('./link');
 const category = require('./category');
 const timeAxis = require('./timeAxis');
 const project = require('./project');
+var cors = require('cors')
 
 module.exports = app => {
 	//设置允许跨域访问该服务.
 	app.options('*', function (req,res) { res.sendStatus(200); });
+	
+	app.use(cors());
+
 	app.use((req, res, next) => {
 		res.header('Access-Control-Allow-Origin', '*')
 		res.header('Access-Control-Max-Age', '3600')
