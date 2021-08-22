@@ -23,8 +23,9 @@ exports.CROSS_DOMAIN = {
 		'http://biaochenxuying.cn/main.html',
 		'http://biaochenxuying.cn',
 		'https://github.com/biaochenxuying',
+		'http://tongjunhua.com'
 	],
-	allowedReferer: 'biaochenxuying',
+	allowedReferer: 'tongjunhua',
 };
 
 exports.MONGODB = {
