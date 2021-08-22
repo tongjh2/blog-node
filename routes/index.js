@@ -13,6 +13,7 @@ const project = require('./project');
 
 module.exports = app => {
 	//设置允许跨域访问该服务.
+	app.options('*', function (req,res) { res.sendStatus(200); });
 	app.use((req, res, next) => {
 		res.header('Access-Control-Allow-Origin', '*')
 		res.header('Access-Control-Max-Age', '3600')
